@@ -26,6 +26,9 @@ export class TopNav extends React.Component<ITopNavProps> {
                 <NavItem>
                     <NavLink to="users" className="nav-link" activeClassName="active">Users</NavLink>
                 </NavItem>
+                <NavItem>
+                    <NavLink to="reimbursements" className="nav-link" activeClassName="active">Reimbursements</NavLink>
+                </NavItem>
             </Nav>
         )
     }

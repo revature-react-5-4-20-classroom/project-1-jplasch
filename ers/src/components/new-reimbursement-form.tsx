@@ -65,7 +65,7 @@ export class NewReimbursementForm extends React.Component<INewReimbursementFormP
     }
 
     bindInputChangeToState = (changeEvent:any) => {
-        this.setState({[changeEvent.currentTarget.name] : changeEvent.currentTarget.value})
+        this.setState({})
     }
 
     render() {

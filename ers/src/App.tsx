@@ -65,6 +65,11 @@ export default class App extends React.Component<any, any> {
                   {this.state.loggedInUser ? `home, ${this.state.loggedInUser.username}!` : "guest!"}
                 </h2>
               </Route>
+              <Route exact path="/reimbursements">
+                <h2>
+                  Reimbursements
+                </h2>
+              </Route>
               {/* Toute to private users page, only accessible by Admin */}
             </Switch>
         </Router>
