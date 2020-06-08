@@ -55,10 +55,10 @@ export class LoginForm extends React.Component<any ,any> {
         return (
             <Container>
                 <Row>
-                    <Col md={{size: 7, offset: 3}}>
+                    <Col md={{size: 4, offset: 3}}>
                         <Form onSubmit={this.attemptLogin}>
                             <FormGroup>
-                                <Label for="username">Username</Label>
+                                <Label for="username">username</Label>
                                 <Input
                                     onChange={this.setUsername}
                                     value={this.state.username}

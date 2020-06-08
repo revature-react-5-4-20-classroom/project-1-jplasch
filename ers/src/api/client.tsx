@@ -3,7 +3,7 @@ import { User } from "../models/User";
 
 
 const ersClient = axios.create({
-    baseURL: "http://http://3.101.45.83:1999/",
+    baseURL: "http://3.101.45.83:1999",
     withCredentials: true,
 });
 
@@ -14,6 +14,7 @@ export async function login(un: string, pw: string): Promise<User> {
             password: pw,
         });
         const {userId, username, password, firstName, lastName, email, role} = response.data;
+        console.log(response.data);
         return new User(userId, username, password,
             firstName, lastName, email, role);
     } catch (e) {
