@@ -36,7 +36,7 @@ export async function getAllUsers(): Promise<User[]> {
 }
 
 export async function getAllReimbursements(): Promise<Reimbursement[]> {
-    const response = await ersClient.get("/books");
+    const response = await ersClient.get("/reimbursements");
     return response.data.map((reimbursementObj: any) => {
         const {reimbursementId, author, amount, dateSubmitted, dateResolved, description, resolver, status, type } = reimbursementObj;
         return new Reimbursement(reimbursementId, author, amount, dateSubmitted, dateResolved, description, resolver, status, type);
