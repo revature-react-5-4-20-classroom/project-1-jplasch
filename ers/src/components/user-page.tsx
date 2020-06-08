@@ -28,8 +28,8 @@ export class UserPage extends React.Component<any, any> {
         return (
             <Container>
                 <Row>
-                    <Col md={{ size: 4 }}>
-                        <h4>Users</h4>
+                    <Col md={{size:5}}>
+                        <h3>Users</h3>
                         {this.state.usersLoaded ? (
                             <ObjectTable objects={this.state.users} />
                         ) : (

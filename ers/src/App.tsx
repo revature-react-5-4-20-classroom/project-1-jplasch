@@ -41,7 +41,7 @@ export default class App extends React.Component<any, any> {
             loggedInUser={this.state.loggedInUser}
             />
             <Jumbotron>
-              <h1 className="display-4"><span role="img" aria-label="ERS App banner with PLACEHOLDER">ERS App</span></h1>
+              <h1 className="display-4"><span role="img" aria-label="ERS App banner with PLACEHOLDER">Expense Reimbursement System</span></h1>
             </Jumbotron>
             <Switch>
               {/* Redirects peeps hitting root url toe ither homr or login */}
@@ -61,8 +61,8 @@ export default class App extends React.Component<any, any> {
               {/* Placeholder for home page */}
               <Route path="/home">
                 <h2>
-                  Welcome{" "}
-                  {this.state.loggedInUser ? `home, ${this.state.loggedInUser.username}!` : "guest!"}
+                  Welcome{""}
+                  {this.state.loggedInUser ? ` home, ${this.state.loggedInUser.username}!` : ", please login"}
                 </h2>
               </Route>
               <Route exact path="/reimbursements">
