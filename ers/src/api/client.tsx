@@ -1,5 +1,6 @@
 import axios from "axios";
 import { User } from "../models/User";
+import { Reimbursement } from "../models/Reimbursements";
 
 
 const ersClient = axios.create({
@@ -32,4 +33,30 @@ export async function getAllUsers(): Promise<User[]> {
         const {userId, username, password, firstName, lastName, email, role} = userObj;
         return new User( userId, username, password, firstName, lastName, email, role);
     });
+}
+
+export async function getAllReimbursements(): Promise<Reimbursement[]> {
+    const response = await ersClient.get("/books");
+    return response.data.map((reimbursementObj: any) => {
+        const {reimbursementId, author, amount, dateSubmitted, dateResolved, description, resolver, status, type } = reimbursementObj;
+        return new Reimbursement(reimbursementId, author, amount, dateSubmitted, dateResolved, description, resolver, status, type);
+    });
+}
+
+export async function postNewReimbursement(r: Reimbursement): Promise<any> {
+    try {
+        const response = await ersClient.post("/reimbursements", {
+            reimbursementId: r.reimbursementId,
+            author: r.amount,
+            amount: r.amount,
+            dateSubmitted: r.dateSubmitted,
+            dateResolved: r.dateResolved,
+            description: r.description,
+            resolver: r.resolver,
+            status: r.status,
+            type: r.type,
+        });
+    } catch (e) {
+        throw e;
+    }
 }
